@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_example/pages/persistent_header_with_tab.dart';
 import 'package:flutter_ui_example/widgets/widgets.dart';
 
 void main() => runApp(MyApp());
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: ''),
+      //注册路由表
+      routes:{
+        "persistent_header_with_tab":(context)=>PersistentHeaderWithTabPage(),
+      } ,
     );
   }
 }
@@ -87,7 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 150.0,
                       width: 100.0,
                     ),
-                  )
+                  ),
+                  FlatButton(
+                    child: Text("persistent_header_with_tab_page"),
+                    textColor: Colors.blue,
+                    onPressed: () {
+                      //导航到新路由   
+                      Navigator.pushNamed(context, "persistent_header_with_tab");
+                    },
+                  ),
                 ],
               ),
             ),
