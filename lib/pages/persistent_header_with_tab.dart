@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-
-void main() => runApp(PersistentHeaderWithTabPage());
-
 class PersistentHeaderWithTabPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        body: Center(
-          child: PersistentHeaderWithTab(),
-        ),
+    return Scaffold(
+      body: Center(
+        child: PersistentHeaderWithTab(),
       ),
     );
   }

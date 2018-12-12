@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_example/pages/persistent_header_with_tab.dart';
+import 'package:flutter_ui_example/pages/pages.dart';
 import 'package:flutter_ui_example/widgets/widgets.dart';
 
 void main() => runApp(MyApp());
@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: ''),
       //注册路由表
       routes:{
-        "persistent_header_with_tab":(context)=>PersistentHeaderWithTabPage(),
+        'persistent_header_with_tab':(context)=>PersistentHeaderWithTabPage(),
+        'hide_app_bar_when_scroll':(context)=>hideAppBarWhenScrollPage(),
       } ,
     );
   }
@@ -94,11 +95,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   FlatButton(
-                    child: Text("persistent_header_with_tab_page"),
+                    child: Text("persistent_header_with_tab"),
                     textColor: Colors.blue,
                     onPressed: () {
                       //导航到新路由   
                       Navigator.pushNamed(context, "persistent_header_with_tab");
+                    },
+                  ),
+                  FlatButton(
+                    child: Text("hide_app_bar_when_scroll"),
+                    textColor: Colors.blue,
+                    onPressed: () {
+                      //导航到新路由   
+                      Navigator.pushNamed(context, "hide_app_bar_when_scroll");
                     },
                   ),
                 ],
