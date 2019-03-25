@@ -62,22 +62,77 @@ class _AnimationExamplePageState extends State<AnimationExamplePage> with Single
     super.dispose();
   }
 
+  void showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (_) => new AlertDialog(
+        title: new Text("Dialog Title"),
+        content: new AnimatedBuilder(
+          animation: movement,
+          builder: (BuildContext context, Widget child) {
+            return new Container(
+              color: Colors.blue,
+              height: 200.0,
+              width: 1000.0,
+              padding: movement.value,
+              child: new Center(
+                child: new Text(
+                  'movement',
+                  style: new TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+        actions:<Widget>[
+          new FlatButton(child:new Text("CANCEL"), onPressed: (){
+            Navigator.of(context).pop();
+
+          },),
+          new FlatButton(child:new Text("OK"), onPressed: (){
+            Navigator.of(context).pop();
+
+          },)
+        ]
+
+      ));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      color: Colors.blue,
-      height: 200.0,
-      width: 200.0,
-      padding: movement.value,
-      child: new Center(
-        child: new Text(
-          'movement',
-          style: new TextStyle(
-            color: Colors.white,
-            fontSize: 16.0
+    return new Column(
+      children: <Widget>[
+        new Container(
+          color: Colors.blue,
+          height: 200.0,
+          width: 1000.0,
+          padding: movement.value,
+          child: new Center(
+            child: new Text(
+              'movement',
+              style: new TextStyle(
+                color: Colors.white,
+                fontSize: 16.0
+              ),
+            ),
           ),
         ),
-      ),
+        new RaisedButton(
+          child: new Text(
+            'show dialog',
+            style: new TextStyle(
+              fontSize: 18.0, //textsize
+              color: Colors.white, // textcolor
+            ),
+          ),
+          onPressed: () {
+            showAlertDialog(context);
+          }
+        )
+      ],
     );
   }
 }
