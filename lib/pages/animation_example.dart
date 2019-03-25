@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-// https://flutterdoc.com/animating-app-bars-in-flutter-cf034cd6c68b
-// https://docs.flutter.io/flutter/widgets/SliverFixedExtentList-class.html
-
+// https://blog.csdn.net/yuezheyue123/article/details/84345219
 class AnimationExamplePage extends StatefulWidget {
   @override
   _AnimationExamplePageState createState() => _AnimationExamplePageState();
