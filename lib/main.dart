@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes:{
         'persistent_header_with_tab':(context)=>PersistentHeaderWithTabPage(),
         'hide_app_bar_when_scroll':(context)=>hideAppBarWhenScrollPage(),
+        'animation_example':(context)=>AnimationExamplePage()
       } ,
     );
   }
@@ -108,6 +109,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       //导航到新路由   
                       Navigator.pushNamed(context, "hide_app_bar_when_scroll");
+                    },
+                  ),
+                  FlatButton(
+                    child: Text("animation example"),
+                    textColor: Colors.blue,
+                    onPressed: () {
+                      Navigator.pushNamed(context, "animation_example");
                     },
                   ),
                 ],
